@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="notes" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{'NOTES.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-b-80" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="ion-margin-vertical ion-padding">
+            
+            <div class="text-center">
+                <app-imagem [imagem]="mountImage(image.value)"> </app-imagem>
+                <app-upload-image [module]="'notes'" (imagem)="receiveImage($event)"></app-upload-image>
+            </div>    
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="text-outline"></ion-icon>
+                        {{'NOTES.form.title' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'NOTES.form.title' | translate}}" autocapitalize type="text" inputmode="text" formControlName="title"></ion-input>
+                </ion-item>                
+            </div>
+
+            <div class="m-t-20" [ngClass]="{'error-message' : note.hasError('required') && (note.dirty || note.touched)}">
+                <ion-label color="app" >
+                    <h3>
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        {{'NOTES.form.note' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : note.hasError('required') && (note.dirty || note.touched)}">
+                    <ion-textarea rows="6" cols="20" placeholder="{{'NOTES.form.note' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="note"></ion-textarea>
+                </ion-item>
+                <ion-label *ngIf="note.hasError('required') && (note.dirty || note.touched)">
+                    <small class="error-message">{{'NOTES.form.note' | translate}}{{'NOTES.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+            
+            
+
+            <div class="m-t-20 text-center">
+                <ion-button color="app" (click)="submit()" class="w-80 h-4em">
+                    {{'NOTES.form.btnCreate' | translate}}
+                </ion-button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button (click)="dismissModal()" [defaultHref]="type" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{headerText | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-margin-vertical ion-padding">
+        <div class="text-center m-b-10">
+            <app-imagem [imagem]="mountImage(image, 'assets/img/icons-menu/' + icons.main + '.svg')"> </app-imagem>
+        </div>
+        <div class="m-t-20">
+            <div *ngFor="let item of data; let i = index" class="m-t-10">
+                <ion-label color="app" *ngIf="item.key !== 'image' && item.data">
+                    <h4>
+                        {{formLabel[item.key]}}
+                        <ion-icon [name]="icons[item.key]"></ion-icon>
+                        <span class="font-bold-i">{{ (formLabel | translate)[item.key] }}:</span> {{item.data}}
+                    </h4>
+                </ion-label>
+            </div>
+        </div>
+        <div class="m-t-20 text-center" *ngIf="id">
+            <ion-row class="w-100">
+                <ion-col size="6">
+                    <ion-button color="app" (click)="editData()" class="w-100 h-3em">
+                        <ion-icon name="pencil-sharp"></ion-icon>
+                        {{'SEARCH-MODAL.edit' | translate}}
+                    </ion-button>
+                </ion-col>
+                <ion-col size="6" class="">
+                    <ion-button color="danger" (click)="deleteData()" class="w-100 h-3em">
+                        <ion-icon name="trash-sharp"></ion-icon>
+                        {{'SEARCH-MODAL.remove' | translate}}
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

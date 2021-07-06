@@ -1,0 +1,45 @@
+<ion-content>
+
+    <ion-grid fixed>
+
+        <div class="conteudo ion-padding m-t-50">
+            <div class="ion-padding ion-text-center">
+                <img src="assets/img/logo.svg" class="img-logo" />
+            </div>
+
+            <ion-text class="ion-text-center" color="app">
+                <h1 class="m-t-10"><strong>{{'APP-NAME.name' | translate}}</strong></h1>
+            </ion-text>
+
+            <ion-button color="danger" class="w-100 m-t-20 h-4em" (click)="loginGoogle()">
+                <ion-row class="w-100">
+                    <ion-col size="2">
+                        <ion-icon color="light" size="large" name="logo-google"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10" class="p-14 text-left">
+                        <ion-text color="light">
+                            {{'LOGIN.google' | translate}}
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+            </ion-button>
+            <ion-button color="app" class="w-100 m-t-10 h-4em" (click)="loginFacebook()">
+                <ion-row class="w-100">
+                    <ion-col size="2">
+                        <ion-icon size="large" name="logo-facebook"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10" class="p-14 text-left">
+                        <ion-text color="light">
+                            {{'LOGIN.facebook' | translate}}
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+
+            </ion-button>
+        </div>
+    </ion-grid>
+</ion-content>
+
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

@@ -1,0 +1,11 @@
+<ion-button class="w-100" color="app" fill="outline" (click)="selectImage()" *ngIf="ehMobile" >
+  <ion-icon slot="start" name="camera"></ion-icon>
+  {{'UPLOAD-IMAGE-COMPONENT.selectImage' | translate}}
+</ion-button>
+
+
+<ion-button class="w-100" color="app" fill="outline" (click)="clickInputFile()" *ngIf="!ehMobile">
+  <ion-icon slot="start" name="camera"></ion-icon>
+  {{'UPLOAD-IMAGE-COMPONENT.selectImage' | translate}}
+  <input style="display: none !important;" (change)="onChange($event)" type="file" id="customFile" *ngIf="!ehMobile" />
+</ion-button>

@@ -1,0 +1,29 @@
+<ion-searchbar mode="ios" [placeholder]="'SEARCH-DATA.inputSearch' | translate" (ionClear)="onClear($event)"
+    (ionChange)="onChange($event)"></ion-searchbar>
+
+<div class="ion-padding text-right p-t-0 text-bold">
+    <ion-button color="app" fill="outline" size="small" (click)="newData()">
+        + {{'SEARCH-DATA.addNew' | translate}}
+    </ion-button>
+</div>
+
+<div class="m-t-10 m-b-80" *ngIf="dataFilterService.dataFilter.length > 0">
+    <app-search-doctor *ngIf="type === 'professionals'" [type]="type" [dataFilter]="dataFilterService.dataFilter">
+    </app-search-doctor>
+    <app-search-notes *ngIf="type === 'notes'" [type]="type" [dataFilter]="dataFilterService.dataFilter">
+    </app-search-notes>
+    <app-search-exam *ngIf="type === 'exams'" [type]="type" [dataFilter]="dataFilterService.dataFilter">
+    </app-search-exam>
+    <app-search-consults *ngIf="type === 'consults'" [type]="type" [dataFilter]="dataFilterService.dataFilter">
+    </app-search-consults>
+    <app-search-disease *ngIf="type === 'diseases'" [type]="type" [dataFilter]="dataFilterService.dataFilter">
+    </app-search-disease>
+    <app-search-medication *ngIf="type === 'medications'" [type]="type" [dataFilter]="dataFilterService.dataFilter">
+    </app-search-medication>
+</div>
+
+<div class="m-t-10 m-b-80 text-center ion-padding" *ngIf="dataFilterService.dataFilter.length <= 0">
+    <ion-label color="app">
+        <h2 class="font-bold-i">{{'SEARCH-DATA.noData' | translate}}</h2>
+    </ion-label>
+</div>

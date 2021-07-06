@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <!-- <ion-buttons slot="start">
+            <ion-back-button (click)="dismissModal()" [defaultHref]="type" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{headerText | translate}}</strong>
+        </ion-buttons> -->
+
+        <ion-buttons slot="start">
+            <ion-back-button text="" (click)="dismissModal()" class="button back-button-has-icon-only show-back-button">
+            </ion-back-button>
+            <strong>{{headerText | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar mode="ios" [placeholder]="'SEARCH-DATA.inputSearch' | translate" (ionClear)="onClear($event)"
+        (ionChange)="onChange($event)"></ion-searchbar>
+
+    <div class="ion-padding text-right p-t-0 text-bold">
+        <ion-button color="app" fill="outline" size="small" (click)="newData()">
+            + {{'SEARCH-DATA.addNew' | translate}}
+        </ion-button>
+    </div>
+
+    <div class="m-t-10 m-b-80" *ngIf="dataFilterService.dataFilterModal.length > 0">
+        <div *ngFor="let data of dataFilterService.dataFilterModal">
+            <ion-card *ngIf="data.show" (click)="setData(data)">
+                <ion-card-content class="content-data-list">
+                    <ion-row class="stats-row md hydrated">
+                        <ion-col size="2" class="m-t-5 m-b-5">
+                            <ion-thumbnail>
+                                <app-imagem classes="w-100-i img-responsive" [imagem]="mountImage(data.image)">
+                                </app-imagem>
+                            </ion-thumbnail>
+
+                        </ion-col>
+                        <ion-col size="9" class="p-l-15">
+                            <ion-label color="app" class="truncate-text">
+                                <h2 class="font-bold-i">{{data.name}}</h2>
+                                <h4>{{data.medicalSpecialization}}</h4>
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="1" class="m-t-5">
+                            <ion-icon color="app" size="large" name="chevron-forward-outline"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+
+    <div class="m-t-10 m-b-80 text-center ion-padding" *ngIf="dataFilterService.dataFilter.length <= 0">
+        <ion-label color="app">
+            <h2 class="font-bold-i">{{'SEARCH-DATA.noData' | translate}}</h2>
+        </ion-label>
+    </div>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

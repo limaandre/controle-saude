@@ -1,0 +1,9 @@
+<div *ngIf="imageComponent" >
+    <div style="text-align: center !important; margin-top: 30px !important;"
+        [style.display]="loaded ? 'none' : 'unset'">
+        <ion-spinner color="primary" name="crescent"></ion-spinner>
+    </div>
+
+    
+    <ion-img [class]="classes" (ionError)="erroImg()" [src]="imageComponent" (ionImgDidLoad)="imageLoaded()"></ion-img>
+</div>

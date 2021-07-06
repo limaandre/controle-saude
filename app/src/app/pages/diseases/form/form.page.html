@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="diseases" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{'DISEASES.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-b-80" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="ion-margin-vertical ion-padding">
+        
+            <div [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                <ion-label color="app" >
+                    <h3>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        {{'DISEASES.form.name' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                    <ion-input placeholder="{{'DISEASES.form.name' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="name"></ion-input>
+                </ion-item>
+                <ion-label *ngIf="name.hasError('required') && (name.dirty || name.touched)">
+                    <small class="error-message">{{'DISEASES.form.name' | translate}}{{'DISEASES.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+            
+           <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        {{'DISEASES.form.note' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" >
+                    <ion-textarea rows="6" cols="20" placeholder="{{'DISEASES.form.note' | translate}}" autocapitalize
+                        type="text" inputmode="text" formControlName="note"></ion-textarea>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20 text-center">
+                <ion-button color="app" (click)="submit()" class="w-80 h-4em">
+                    {{'DISEASES.form.btnCreate' | translate}}
+                </ion-button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

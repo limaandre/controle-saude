@@ -1,0 +1,196 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/OpenSans-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('assets/fonts/OpenSans-Bold.ttf');
+  font-display: swap;
+}
+
+.ion-color-app {
+  --ion-color-base: var(--ion-color-app);
+  --ion-color-base-rgb: var(--ion-color-app-rgb);
+  --ion-color-contrast: var(--ion-color-app-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-app-contrast-rgb);
+  --ion-color-shade: var(--ion-color-app-shade);
+  --ion-color-tint: var(--ion-color-app-tint);
+}
+
+* {
+    font-family: 'Open Sans';
+}
+
+.background-one {
+  --background: ##74B3CC;
+  background-color: #809bce;
+}
+
+.background-two {
+  --background: #90e0ef;
+  background-color: #90e0ef;
+}
+
+.p-t-0 {
+    padding-top: 0;
+}
+.p-10 {
+    padding: 10px;
+}
+
+.p-14 {
+    padding: 14px;
+}
+
+.p-l-15 {
+    padding-left: 15px;
+}
+
+.w-100 {
+    width: 100%;
+}
+.w-100-i {
+    width: 100% !important;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.m-t-0 {
+    margin-top: 0;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-b-5 {
+    margin-bottom: 5px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-b-30 {
+    margin-bottom: 30px;
+}
+
+.m-b-80 {
+    margin-bottom: 80px;
+}
+
+.btn-box {
+    border-color: #403e3929;
+    border-width: thin;
+    border-style: solid;
+    border-radius: .5em;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+.font-bold-i {
+    font-weight: bold !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.h-4em {
+    height: 4em;
+}
+
+.error-message {
+    color: var(--ion-color-danger);
+    border-color: var(--ion-color-danger);
+}
+
+ion-button, ion-label h3 {
+    font-weight: bold !important;
+}
+
+ion-button {    
+    --border-radius: 2em;	
+}
+
+ion-content{
+    --ion-background-color: #ffffff;
+}
+
+.content-data-list {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 5px !important;
+}
+
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,15 @@
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+  <ion-fab-button class="button-color" >    
+    <img src="../../../assets/img/{{languageSerivce.selected}}.svg" alt="">
+  </ion-fab-button>
+
+
+  <ion-fab-list side="start">
+    <ion-fab-button class="button-color" (click)="select('pt')">
+      <img src="../../../assets/img/pt.svg" alt="">
+    </ion-fab-button>
+    <ion-fab-button class="button-color" (click)="select('en')">
+      <img src="../../../assets/img/en.svg" alt="">
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

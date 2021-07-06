@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="app">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="3">
+                    <ion-thumbnail *ngIf="user && user.photoURL"> <img [src]="user.photoURL"></ion-thumbnail>
+                </ion-col>
+                <ion-col>
+                    <ion-title>
+                        {{parseName()}}
+                        <br>
+                        <small>{{othersInfo()}} </small>
+                    </ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+
+
+    </ion-toolbar>
+</ion-header>

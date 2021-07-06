@@ -1,0 +1,8 @@
+{
+  "name": "minha-saude",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "94bbb44e"
+}

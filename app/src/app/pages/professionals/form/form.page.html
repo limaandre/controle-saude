@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="professionals" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{'PROFESSIONALS.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-b-80" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="ion-margin-vertical ion-padding">
+            
+            <div class="text-center">
+                <app-imagem [imagem]="mountImage(image.value)"> </app-imagem>
+                <app-upload-image [module]="'Doctor'" (imagem)="receiveImage($event)"></app-upload-image>
+            </div>    
+
+            <div class="m-t-20" [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                <ion-label color="app" >
+                    <h3>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        {{'PROFESSIONALS.form.name' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                    <ion-input placeholder="{{'PROFESSIONALS.form.name' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="name"></ion-input>
+                </ion-item>
+                <ion-label *ngIf="name.hasError('required') && (name.dirty || name.touched)">
+                    <small class="error-message">{{'PROFESSIONALS.form.name' | translate}}{{'PROFESSIONALS.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+            
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="mail-outline"></ion-icon>
+                        {{'PROFESSIONALS.form.email' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'PROFESSIONALS.form.email' | translate}}" autocapitalize type="email" inputmode="email" formControlName="email"></ion-input>
+                </ion-item>                
+            </div>
+            
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="bag-outline"></ion-icon>
+                        {{'PROFESSIONALS.form.medicalSpecialization' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input autocapitalize placeholder="{{'PROFESSIONALS.form.medicalSpecialization' | translate}}" type="text" inputmode="text" formControlName="medicalSpecialization"></ion-input>
+                </ion-item>                
+            </div>
+            
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="location-outline"></ion-icon>
+                        {{'PROFESSIONALS.form.address' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'PROFESSIONALS.form.address' | translate}}" autocapitalize type="text" inputmode="text" formControlName="address"></ion-input>
+                </ion-item>                
+            </div>
+            
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="call-outline"></ion-icon>
+                        {{'PROFESSIONALS.form.phoneNumber' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'PROFESSIONALS.form.phoneNumber' | translate}}" autocapitalize type="tel" inputmode="tel" formControlName="phoneNumber"></ion-input>
+                </ion-item>                
+            </div>
+
+            <div class="m-t-20 text-center">
+                <ion-button color="app" (click)="submit()" class="w-80 h-4em">
+                    {{'PROFESSIONALS.form.btnCreate' | translate}}
+                </ion-button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

@@ -1,0 +1,127 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="exams" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{'EXAMS.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-b-80" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="ion-margin-vertical ion-padding">
+
+            <div class="text-center">
+                <app-imagem [imagem]="mountImage(image.value)"> </app-imagem>
+                <app-upload-image [module]="'Exams'" (imagem)="receiveImage($event)"></app-upload-image>
+            </div>
+
+            <div class="m-t-20"
+                [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="pulse-outline"></ion-icon>
+                        {{'EXAMS.form.name' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none"
+                    [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                    <ion-input placeholder="{{'EXAMS.form.name' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="name"></ion-input>
+                </ion-item>
+                <ion-label *ngIf="name.hasError('required') && (name.dirty || name.touched)">
+                    <small class="error-message">{{'EXAMS.form.name' | translate}}{{'EXAMS.validators.required' |
+                        translate}}</small>
+                </ion-label>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        {{'EXAMS.form.date' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'EXAMS.form.date' | translate}}" autocapitalize type="date"
+                        inputmode="date" formControlName="date"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="alarm-outline"></ion-icon>
+                        {{'EXAMS.form.hour' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'EXAMS.form.hour' | translate}}" autocapitalize type="time"
+                        inputmode="time" formControlName="hour"></ion-input>
+                </ion-item>
+            </div>
+            <div class="m-t-20 content" (click)="addProfessional()" [ngClass]="{'error-message' : doctor.hasError('required') && (doctor.dirty || doctor.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        {{'EXAMS.form.doctor' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : doctor.hasError('required') && (doctor.dirty || doctor.touched)}">
+                    <ion-input readonly placeholder="{{'EXAMS.form.doctor' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="doctor"></ion-input>
+                </ion-item>     
+                <ion-label *ngIf="doctor.hasError('required') && (doctor.dirty || doctor.touched)">
+                    <small class="error-message">{{'EXAMS.form.doctor' | translate}}{{'EXAMS.validators.required' |
+                        translate}}</small>
+                </ion-label>
+                 <div class="overlay"></div>        
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="location-outline"></ion-icon>
+                        {{'EXAMS.form.locale' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'EXAMS.form.locale' | translate}}" autocapitalize type="locale"
+                        inputmode="locale" formControlName="locale"></ion-input>
+                </ion-item>
+            </div>
+
+
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        {{'EXAMS.form.note' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" >
+                    <ion-textarea rows="6" cols="20" placeholder="{{'EXAMS.form.note' | translate}}" autocapitalize
+                        type="text" inputmode="text" formControlName="note"></ion-textarea>
+                </ion-item>
+            </div>
+
+
+
+            <div class="m-t-20 text-center">
+                <ion-button color="app" (click)="submit()" class="w-80 h-4em">
+                    {{'EXAMS.form.btnCreate' | translate}}
+                </ion-button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

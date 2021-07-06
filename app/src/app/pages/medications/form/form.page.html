@@ -1,0 +1,165 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="medications" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{'MEDICATIONS.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-b-80" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="ion-margin-vertical ion-padding">
+
+            <div class="text-center">
+                <app-imagem [imagem]="mountImage(image.value)"> </app-imagem>
+                <app-upload-image [module]="'Medicine'" (imagem)="receiveImage($event)"></app-upload-image>
+            </div>
+
+            <div class="m-t-20"
+                [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        {{'MEDICATIONS.form.name' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none"
+                    [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                    <ion-input placeholder="{{'MEDICATIONS.form.name' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="name"></ion-input>
+                </ion-item>
+                <ion-label *ngIf="name.hasError('required') && (name.dirty || name.touched)">
+                    <small class="error-message">{{'MEDICATIONS.form.name' |
+                        translate}}{{'MEDICATIONS.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="water-outline"></ion-icon>
+                        {{'MEDICATIONS.form.concentration' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'MEDICATIONS.form.concentration' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="concentration"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="wine-outline"></ion-icon>
+                        {{'MEDICATIONS.form.dosage' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'MEDICATIONS.form.dosage' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="dosage"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        {{'MEDICATIONS.form.prescription' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'MEDICATIONS.form.prescription' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="prescription"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        {{'MEDICATIONS.form.dateInitial' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'MEDICATIONS.form.dateInitial' | translate}}" autocapitalize type="date"
+                        inputmode="date" formControlName="dateInitial"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        {{'MEDICATIONS.form.dateEnd' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input placeholder="{{'MEDICATIONS.form.dateEnd' | translate}}" autocapitalize type="date"
+                        inputmode="date" formControlName="dateEnd"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20">
+                <ion-item class="hide-input" lines="none">
+                    <ion-input (ionChange)="changeDate($event)" type="time" inputmode="time" #datePicker
+                        id="auxMedicationSchedules" formControlName="auxMedicationSchedules">
+                    </ion-input>
+                </ion-item>
+
+                <ion-button fill="outline" color="app" (click)="focusSearch()" class="">
+                    <ion-icon name="time-outline"></ion-icon>{{'MEDICATIONS.form.medicationSchedules' | translate}}
+                </ion-button>
+
+                <ion-item lines="none" *ngIf="form.value.medicationSchedules && form.value.medicationSchedules.length">
+                    <span (click)="removeHour(i)" class="hours-selected"
+                        *ngFor="let item of form.value.medicationSchedules; let i = index">{{item}}</span>
+                </ion-item>
+            </div>
+
+            <div class="m-t-20 content" (click)="addProfessional()" >
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        {{'MEDICATIONS.form.doctor' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-input readonly placeholder="{{'MEDICATIONS.form.doctor' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="doctor"></ion-input>
+                </ion-item>     
+                 <div class="overlay"></div>        
+            </div>
+
+            <div class="m-t-20">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        {{'MEDICATIONS.form.note' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none">
+                    <ion-textarea rows="6" cols="20" placeholder="{{'MEDICATIONS.form.note' | translate}}"
+                        autocapitalize type="text" inputmode="text" formControlName="note"></ion-textarea>
+                </ion-item>
+            </div>
+
+
+
+            <div class="m-t-20 text-center">
+                <ion-button color="app" (click)="submit()" class="w-80 h-4em">
+                    {{'MEDICATIONS.form.btnCreate' | translate}}
+                </ion-button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

@@ -1,0 +1,184 @@
+{
+    "status": true,
+    "LOGIN": {
+        "email": "E-mail",
+        "password": "Password",
+        "facebook": "Continue with Facebook",
+        "google":   "Continue with Google",
+        "textLogin": "Login with"
+    },
+    "USER-PROFILE": {
+        "invalidUser": "Invalid user. Try again with another user.",
+        "textHeader": "New profile",
+        "logoutApp": "Do you really want to leave?",
+        "saveUserSuccess": "User saved successfully!",
+        "form": {
+            "name": "Name",
+            "email": "E-mail",
+            "birthDate": "Birth date",
+            "gender": "Gender",
+            "genderMale": "Male",
+            "genderFemale": "Female",
+            "genderOthers": "Others",
+            "bloodType": "Blood Type",
+            "btnCreate": "Save",
+            "placeholderSelect": "Choose"
+        },
+        "validators": {
+            "required": " is required"
+        }
+    },
+    "DELETE-DATA": {
+        "msgValidate": "Are you sure you want to remove?",
+        "successMsg": "Successfully removed"
+    },
+    "ALERT-COMPONENT": {
+        "btnCancel": "Cancel",
+        "btnConfirm": "Confirm"
+    },
+    "UPLOAD-IMAGE-COMPONENT": {
+        "selectImage": "Select an image",
+        "uploadSelectImage": "Select the source of the image",
+        "uploadCamera": "Camera",
+        "uploadGallery": "Gallery",
+        "uploadCancel": "Cancel"
+    },
+    "INTERCEPTOR": {
+        "msgError": "It is not possible to continue. Try again later.",
+        "headerError": "Attention",
+        "btnAlert": "Confirm"
+    },
+    "HEADER": {
+        "genderMale": "Male",
+        "genderFemale": "Female",
+        "genderOthers": "Others",
+        "years": "Years"
+    },
+    "HOME": {
+        "newProfile": "Create new profile",
+        "menu": {
+            "notes": "Notes",
+            "medications": "Medications",
+            "diseases": "Diseases",
+            "professionals": "Professionals",
+            "exams": "Exams",
+            "consults": "Consults"            
+        }
+    },
+    "MENU": {
+        "profile": "Profile",
+        "logout": "Logout"
+    },
+    "APP-NAME": {
+        "name": "Health Control"
+    },
+    "PROFESSIONALS": {
+        "textHeader": "Professionals",
+        "saveSuccess": "Professional saved successfully!",
+        "form": {
+            "name": "Name",
+            "email": "E-mail",
+            "medicalSpecialization": "Specialization",
+            "address": "Address",
+            "phoneNumber": "Phone number",
+            "image": "Image",
+            "file": "File",
+            "btnCreate": "Save"
+        },
+        "validators": {
+            "required": " is required"
+        }
+    },
+    "NOTES": {
+        "textHeader": "Notes",
+        "saveSuccess": "Note saved successfully!",
+        "form": {
+            "title": "Title",
+            "note": "Note",                        
+            "image": "Image",
+            "file": "File",
+            "btnCreate": "Save"
+        },
+        "validators": {
+            "required": " is required"
+        }
+    },
+    "EXAMS": {
+        "textHeader": "Exams",
+        "saveSuccess": "Exam saved successfully!",
+        "form": {
+            "name": "Name",
+            "date": "Date",
+            "hour": "Hour",
+            "doctor": "Professional",        
+            "locale": "Locale",                        
+            "note": "Notes",                        
+            "image": "Image",
+            "file": "File",
+            "btnCreate": "Save"
+        },
+        "validators": {
+            "required": " is required"
+        }
+    },
+    "CONSULTS": {
+        "textHeader": "Consults",
+        "saveSuccess": "Consult saved successfully!",
+        "form": {
+            "date": "Date",
+            "hour": "Hour",
+            "doctor": "Professional",        
+            "locale": "Locale",                        
+            "note": "Notes",                        
+            "image": "Image",
+            "file": "File",
+            "btnCreate": "Save"
+        },
+        "validators": {
+            "required": " is required"
+        }
+    },
+    "MEDICATIONS": {
+        "textHeader": "Medications",
+        "saveSuccess": "Medication saved successfully!",
+        "form": {
+            "name": "Name",
+            "concentration": "Concentration",
+            "dosage": "Dosage",
+            "medicationSchedules": "Medication schedules",        
+            "dateInitial": "Initial date",        
+            "dateEnd": "Final date",        
+            "prescription": "Prescription",     
+            "doctor": "Professional",        
+            "note": "Notes",                        
+            "image": "Image",
+            "file": "File",
+            "btnCreate": "Save"
+        },
+        "validators": {
+            "required": " is required"
+        }
+    },
+    "DISEASES": {
+        "textHeader": "Diseases",
+        "saveSuccess": "Disease saved successfully!",
+        "form": {
+            "name": "Name",
+            "note": "Notes",           
+            "medicine": "Medicines",           
+            "btnCreate": "Save"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "SEARCH-DATA": {
+        "inputSearch": "Search",
+        "addNew": "Add new",
+        "noData": "No information found"
+    },
+    "SEARCH-MODAL": {
+        "edit": "Edit",
+        "remove": "Remove"
+    }
+}

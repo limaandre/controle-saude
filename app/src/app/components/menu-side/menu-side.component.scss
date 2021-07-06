@@ -1,0 +1,23 @@
+.menu-header-bg {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+    border-bottom: 5px solid var(--ion-color-app);
+}
+
+ion-item {
+    --padding-start: 0
+}
+
+ion-label {
+    font-weight: bolder;
+}
+
+ion-icon {
+    padding: 5%;
+}
+
+.img-logo {
+    width: 50%;
+}

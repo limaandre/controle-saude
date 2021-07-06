@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-button (click)="goHome()">
+                <ion-icon size="large" name="chevron-back-outline"></ion-icon>
+            </ion-button>
+            <strong>{{'PROFESSIONALS.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-searchbar showCancelButton="focus" placeholder="" (ionCancel)="onCancel($event)"> </ion-searchbar> -->
+    <app-search-data *ngIf="dataFilter"  [type]="'professionals'"></app-search-data>
+
+
+</ion-content>
+
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

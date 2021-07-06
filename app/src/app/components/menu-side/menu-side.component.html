@@ -1,0 +1,14 @@
+<ion-menu type="overlay" contentId="main">    
+    <ion-content>
+        <div class="menu-header-bg ion-padding ion-text-center">
+            <img src="assets/img/logo.svg" class="img-logo" />
+        </div>
+        <ion-list>
+            <ion-item  *ngFor="let item of itensMenu" 
+            (click)="item.func ? item.func( item.params ) : null" > 
+            <ion-icon color="app" size="large" name="{{item.icon}}"></ion-icon>
+            <ion-label color="app">{{item.translate | translate}}</ion-label> 
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>964820806479-jfjmut9vci220n7jivivp5r1buvecj6k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>52975763890-cgm3oipuhse0kfv81q9v843cdm4k67te.apps.googleusercontent.com</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>964820806479-5p3r545ebeg08jlqsuk0jtlqk2cdqjn7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCGwCvJ4uBWSXkjGGuefjRIm8wigKywAcY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>964820806479</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.minha.saude</string>
+	<key>PROJECT_ID</key>
+	<string>minha-saude-5758e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>minha-saude-5758e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:964820806479:ios:1c9923d4aac44cc86b733a</string>
+</dict>
+</plist>

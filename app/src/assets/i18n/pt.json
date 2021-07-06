@@ -1,0 +1,183 @@
+{
+    "status": true,
+    "LOGIN": {
+        "email": "E-mail",
+        "password": "Senha",
+        "facebook": "Entrar com o Facebook",
+        "google": "Entrar com o Google",
+        "textLogin": "Acessar com"
+    },
+    "USER-PROFILE": {
+        "invalidUser": "Usuário invalido. Tente novamente com outro usuário.",
+        "textHeader": "Novo perfil",
+        "logoutApp": "Deseja mesmo sair?",
+        "saveUserSuccess": "Usuário salvo com sucesso!",
+        "form": {
+            "name": "Nome",
+            "email": "E-mail",
+            "birthDate": "Data de nascimento",
+            "gender": "Gênero",
+            "genderMale": "Masculino",
+            "genderFemale": "Feminino",
+            "genderOthers": "Outros",
+            "bloodType": "Tipo sanguíneo",
+            "btnCreate": "Salvar",
+            "placeholderSelect": "Selecione"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "DELETE-DATA": {
+        "msgValidate": "Têm certeza que deseja remover?",
+        "successMsg": "Removido com sucesso"
+    },
+    "ALERT-COMPONENT": {
+        "btnCancel": "Cancelar",
+        "btnConfirm": "Confirmar"
+    },
+    "UPLOAD-IMAGE-COMPONENT": {
+        "selectImage": "Selecione uma imagem",
+        "uploadSelectImage": "Selecione a origem da imagem",
+        "uploadCamera": "Câmera",
+        "uploadGallery": "Biblioteca",
+        "uploadCancel": "Cancelar"
+    },
+    "INTERCEPTOR": {
+        "msgError": "Não é possível continuar. Tente novamente mais tarde.",
+        "headerError": "Atenção",
+        "btnAlert": "Entendido"
+    },
+    "HEADER": {
+        "genderMale": "Masculino",
+        "genderFemale": "Feminino",
+        "genderOthers": "Outros",
+        "years": "Anos"
+    },
+    "HOME": {
+        "newProfile": "Criar novo perfil",
+        "menu": {
+            "notes": "Anotações",
+            "medications": "Medicamentos",
+            "diseases": "Doenças",
+            "professionals": "Profissionais",
+            "exams": "Exames",
+            "consults": "Consultas"            
+        }
+    },
+    "MENU": {
+        "profile": "Perfil",
+        "logout": "Sair"
+    },
+    "APP-NAME": {
+        "name": "Controle Saúde"
+    },
+    "PROFESSIONALS": {
+        "textHeader": "Profissionais",
+        "saveSuccess": "Profissional salvo com sucesso!",
+        "form": {
+            "name": "Nome",
+            "email": "E-mail",
+            "medicalSpecialization": "Especialização",
+            "address": "Endereço",
+            "phoneNumber": "Telefone",
+            "image": "Imagem",
+            "file": "Arquivo",
+            "btnCreate": "Salvar"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "NOTES": {
+        "textHeader": "Anotações",
+        "saveSuccess": "Anotação salvo com sucesso!",
+        "form": {
+            "title": "Título",
+            "note": "Anotação",            
+            "image": "Imagem",
+            "file": "Arquivo",
+            "btnCreate": "Salvar"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "EXAMS": {
+        "textHeader": "Exames",
+        "saveSuccess": "Exame salvo com sucesso!",
+        "form": {
+            "name": "Nome",
+            "date": "Data",
+            "hour": "Hora",
+            "doctor": "Profissional",        
+            "locale": "Local",        
+            "note": "Anotações",           
+            "image": "Imagem",
+            "file": "Arquivo",
+            "btnCreate": "Salvar"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "CONSULTS": {
+        "textHeader": "Consultas",
+        "saveSuccess": "Consulta salvo com sucesso!",
+        "form": {
+            "date": "Data",
+            "hour": "Hora",
+            "doctor": "Profissional",        
+            "locale": "Local",        
+            "note": "Anotações",           
+            "image": "Imagem",
+            "file": "Arquivo",
+            "btnCreate": "Salvar"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "MEDICATIONS": {
+        "textHeader": "Medicamentos",
+        "saveSuccess": "Medicamento salvo com sucesso!",
+        "form": {
+            "name": "Nome",
+            "concentration": "Concentração",
+            "dosage": "dosagem",
+            "medicationSchedules": "Horários da medicação",        
+            "dateInitial": "Data inicial",        
+            "dateEnd": "Data Final",        
+            "prescription": "Prescrição",  
+            "doctor": "Profissional",              
+            "note": "Anotações",           
+            "image": "Imagem",
+            "btnCreate": "Salvar"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "DISEASES": {
+        "textHeader": "Doenças",
+        "saveSuccess": "Doença salvo com sucesso!",
+        "form": {
+            "name": "Nome",
+            "note": "Anotações",           
+            "medicine": "Medicamentos",           
+            "btnCreate": "Salvar"
+        },
+        "validators": {
+            "required": " é obrigatório"
+        }
+    },
+    "SEARCH-DATA": {
+        "inputSearch": "Buscar",
+        "addNew": "Adicionar novo",
+        "noData": "Nenhuma informação encontrada"
+    },
+    "SEARCH-MODAL": {
+        "edit": "Editar",
+        "remove": "Remover"
+    }
+}

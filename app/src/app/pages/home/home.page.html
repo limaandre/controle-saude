@@ -1,0 +1,16 @@
+<app-header [texts]="'HEADER' | translate"></app-header>
+<ion-content [fullscreen]="true">
+    <ion-grid class="m-t-20 text-center">
+        <ion-row>
+            <ion-col class="m-b-30" size="4" *ngFor="let item of homeMenu" (click)="goPage(item.page)" >
+                <img color="danger" [src]="item.icon" class="icons-menu" *ngIf="item.icon" />
+                <ion-icon color="primary" size="large" name="camera" *ngIf="!item.icon"></ion-icon>
+                <br>
+                <small>{{item.indexLang | translate}}</small>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>

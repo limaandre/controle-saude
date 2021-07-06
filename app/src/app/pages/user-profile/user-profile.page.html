@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-toolbar class="background-color" color="app">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home" text=""></ion-back-button>
+            <strong class="ion-margin-horizontal">{{'USER-PROFILE.textHeader' | translate}}</strong>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-b-80" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="ion-margin-vertical ion-padding">
+            <div class="m-b-10 text-center">
+                <app-imagem [imagem]="image.value" *ngIf="image.value"> </app-imagem>
+                <app-upload-image [module]="'User'" (imagem)="receiveImage($event)"></app-upload-image>
+            </div>
+
+            <div class="m-t-20" [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        {{'USER-PROFILE.form.name' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : name.hasError('required') && (name.dirty || name.touched)}">
+                    <ion-input placeholder="{{'USER-PROFILE.form.name' | translate}}" autocapitalize type="text"
+                        inputmode="text" formControlName="name"></ion-input>
+                </ion-item>
+                <ion-label *ngIf="name.hasError('required') && (name.dirty || name.touched)">
+                    <small class="error-message">{{'USER-PROFILE.form.name' | translate}}{{'USER-PROFILE.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+            
+            <div class="m-t-20" [ngClass]="{'error-message' : birthDate.hasError('required') && (birthDate.dirty || birthDate.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        {{'USER-PROFILE.form.birthDate' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : birthDate.hasError('required') && (birthDate.dirty || birthDate.touched)}">
+                    <ion-input placeholder="dd/mm/aaaa" autocapitalize type="date" inputmode="text" formControlName="birthDate"></ion-input>
+                </ion-item>
+                <ion-label *ngIf="birthDate.hasError('required') && (birthDate.dirty || birthDate.touched)">
+                    <small class="error-message">{{'USER-PROFILE.form.name' | translate}}{{'USER-PROFILE.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+
+            <div class="m-t-20" [ngClass]="{'error-message' : bloodType.hasError('required') && (bloodType.dirty || bloodType.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="water-outline"></ion-icon>
+                        {{'USER-PROFILE.form.bloodType' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : bloodType.hasError('required') && (bloodType.dirty || bloodType.touched)}">
+                    <ion-label class="d-none">{{'USER-PROFILE.form.bloodType' | translate}}</ion-label>
+                    <ion-select  formControlName="bloodType" okText="{{'ALERT-COMPONENT.btnConfirm' | translate}}"
+                        cancelText=" {{'ALERT-COMPONENT.btnCancel' | translate}}" placeholder="{{'USER-PROFILE.form.placeholderSelect' | translate}}" class="w-100">
+                        <ion-select-option *ngFor="let type of bloodTypes" [value]="type">{{type}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-label *ngIf="bloodType.hasError('required') && (bloodType.dirty || bloodType.touched)">
+                    <small class="error-message">{{'USER-PROFILE.form.bloodType' | translate}}{{'USER-PROFILE.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+
+            <div class="m-t-20" [ngClass]="{'error-message' : gender.hasError('required') && (gender.dirty || gender.touched)}">
+                <ion-label color="app">
+                    <h3>
+                        <ion-icon name="transgender-outline"></ion-icon>
+                        {{'USER-PROFILE.form.gender' | translate}}
+                    </h3>
+                </ion-label>
+                <ion-item class="btn-box" lines="none" [ngClass]="{'error-message' : gender.hasError('required') && (gender.dirty || gender.touched)}">
+                    <ion-label class="d-none">{{'USER-PROFILE.form.gender' | translate}}</ion-label>
+                    <ion-select  formControlName="gender" okText="{{'ALERT-COMPONENT.btnConfirm' | translate}}"
+                        cancelText=" {{'ALERT-COMPONENT.btnCancel' | translate}}" placeholder="{{'USER-PROFILE.form.placeholderSelect' | translate}}" class="w-100">
+                        <ion-select-option [value]="'M'"> {{'USER-PROFILE.form.genderMale' | translate}}</ion-select-option>
+                        <ion-select-option [value]="'F'"> {{'USER-PROFILE.form.genderFemale' | translate}}</ion-select-option>
+                        <ion-select-option [value]="'O'"> {{'USER-PROFILE.form.genderOthers' | translate}}</ion-select-option>                        
+                    </ion-select>
+                </ion-item>
+                <ion-label *ngIf="gender.hasError('required') && (gender.dirty || gender.touched)">
+                    <small class="error-message">{{'USER-PROFILE.form.gender' | translate}}{{'USER-PROFILE.validators.required' | translate}}</small>
+                </ion-label>
+            </div>
+
+            <div class="m-t-20 text-center">
+                <ion-button color="app" (click)="submit()" class="w-80 h-4em">
+                    {{'USER-PROFILE.form.btnCreate' | translate}}
+                </ion-button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</ion-content>
+<ion-footer>
+    <app-fab></app-fab>
+</ion-footer>
